@@ -62,21 +62,25 @@ public static class Pathfinder
             var current = todo.Dequeue();
             foreach (var neighbor in current.GetSuccessors())
             {
-                if (neighbor.Equals(end)) { return BuildPath(predecessors, neighbor); }
+                if (neighbor.Equals(end))
+                {
+                    predecessors[neighbor] = current;
+                    return BuildPath(predecessors, neighbor, start);
+                }
                 if(predecessors.ContainsKey(neighbor)){continue;}
                 predecessors[neighbor] = current; //saves that the neighbor's predecessor is this node.
                 todo.Enqueue(neighbor);
             }
         }
 
-        static List<State> BuildPath(Dictionary<State, State> predecessors, State neighbor ) 
+        static List<State> BuildPath(Dictionary<State, State> predecessors, State neighbor, State start ) 
         {
             List<State> path = new List<State>();
             
-            while (!neighbor.Equals(null)) 
+            while (!neighbor.Equals(start))  //infinite loop... neighbor not nullable
             {
                 path.Add(neighbor);
-                neighbor = predecessors[neighbor]; //key not found??
+                neighbor = predecessors[neighbor];
             }
             path.Reverse();
             return path;
