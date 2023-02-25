@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Utils;
 
 public static class Pathfinder
 {
@@ -87,4 +88,44 @@ public static class Pathfinder
         }
         return null;
     }
+
+    public static IEnumerable<State> Djikstra(State start, State end)
+    {
+        
+    }
+
+
+
+
+    public static IEnumerable<State> Astar(State start, State end)
+    {
+        var todo_nodes = new PriorityQueue<State, int>();
+        todo_nodes.Enqueue(start,0);
+        var predecessors = new Dictionary<State, State>();
+        var costs = new Dictionary<State, int>();
+        costs[start] = 0;
+        while (todo_nodes.Count > 0)
+        {
+            var current_node = todo_nodes.Dequeue();
+            if (current_node.Equals(end)) { return BuildPath; }
+            foreach (var connection in current_node.GetSuccessors())
+            {
+                var neighbor = connection.next; //???? watch 'refactoring' loom
+                var new_costs = costs[current_node] + connection.costs; //???? see above
+                if( costs.ContainsKey(neighbor) && costs[neighbor] <= new_costs){ continue; }
+                else
+                {
+                    if (todo_nodes.contains(neighbor)) // see above
+                    {
+                        todo_nodes.Dequeue(neighbor);
+                    }
+                }
+
+            }
+        }
+    }
+
+
+
+
 }

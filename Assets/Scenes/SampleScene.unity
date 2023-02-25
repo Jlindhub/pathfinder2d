@@ -347,7 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 11400000, guid: 7c3bd350d11c8bc40a46a26e36f1ee67, type: 2}
   state:
-    playerPosition: {x: 0, y: 0}
+    playerPosition: {x: 9, y: 0}
     _mGrid: {fileID: 11400000, guid: 7c3bd350d11c8bc40a46a26e36f1ee67, type: 2}
   goal:
     playerPosition: {x: 9, y: 9}
