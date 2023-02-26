@@ -1,23 +1,25 @@
+using System;
 using UnityEngine;
 
 [CreateAssetMenu]
 public class Grid: ScriptableObject
 {
-    public bool[] walkableCells; // 100
+    public Cell[] AllCells; // 100
     public int width;  // 10
-    public int Height => walkableCells.Length / width;
+    public int Height => AllCells.Length / width;
 
-    public bool GetCell(int x, int y) => walkableCells[x + y * width];
-    public bool GetCell(Vector2Int pos) => GetCell(pos.x, pos.y);
+    public Cell GetCell(int x, int y) => AllCells[x + y * width];
+    public Cell GetCell(Vector2Int pos) => GetCell(pos.x, pos.y);
+    
+    public bool GetWalkable(int x, int y) => GetCell(x, y).walkable;
+    public bool GetWalkable(Vector2Int pos) => GetWalkable(pos.x, pos.y);
 
-
-
-    public Cell[] cells;
+    private void OnEnable() { foreach (var cell in this.AllCells) { cell.visited = false; } }
 }
-
+[Serializable]
 public class Cell
 {
-    public bool Walkable;
-    public Cell Previous;
-    public int Cost;
+    public bool walkable;
+    public int cost;
+    [HideInInspector] public bool visited;
 }

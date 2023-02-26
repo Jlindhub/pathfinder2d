@@ -14,9 +14,9 @@ public class Visualizer : MonoBehaviour
     {
         gamefile = gameObject.GetComponent<Game>();
         _pathV = new Vector2(0, 0);
-        foreach (var node in gamefile.grid.walkableCells)
+        foreach (var node in gamefile.grid.AllCells)
         {
-            if (node)
+            if (node.walkable)
             {
                 Instantiate(path, _pathV, Quaternion.identity);
             }

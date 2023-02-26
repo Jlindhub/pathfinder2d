@@ -12,5 +12,305 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ca9f02e4eb2ae4b8f1ac65d0ea16cf, type: 3}
   m_Name: 10x10-wall
   m_EditorClassIdentifier: 
-  walkableCells: 01010101010101010101010101010101010101010101010101010101010101010101010101010101000000000101000000000101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+  AllCells:
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 10
+    visited: 0
+  - walkable: 0
+    cost: 1
+    visited: 0
+  - walkable: 0
+    cost: 1
+    visited: 0
+  - walkable: 0
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 0
+    cost: 1
+    visited: 0
+  - walkable: 0
+    cost: 1
+    visited: 0
+  - walkable: 0
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 10
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
+  - walkable: 1
+    cost: 1
+    visited: 0
   width: 10
