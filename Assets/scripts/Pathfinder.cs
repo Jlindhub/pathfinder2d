@@ -97,14 +97,15 @@ public static class Pathfinder
         var predecessors = new Dictionary<Statetwo, Statetwo>();
         var costs = new Dictionary<Statetwo, int>();
         costs[start] = 0;
-        while (todo_nodes.Count > 0)
+        while (todo_nodes.TryDequeue(out var current, out var queueCosts))
         {
-            var current = todo_nodes.Dequeue();
             if (current.Equals(end)) { return BuildPath(predecessors, current,start); }
+
+            if (queueCosts > costs[current]) continue;
             foreach (var connection in current.GetAdjacent())
             {
-                var neighbor = connection.Next; //???? watch 'refactoring' loom - watched, still makes no sense
-                var newCosts = costs[current] + connection.Costs; //???? see above
+                var neighbor = connection.Next;
+                var newCosts = costs[current] + connection.Costs;
                 if( costs.ContainsKey(neighbor) && costs[neighbor] <= newCosts){ continue; }
 
                 if (newCosts > costs[current]) // see above
@@ -117,7 +118,6 @@ public static class Pathfinder
                 var heuristic = HeurEstimate(neighbor, end);
                 todo_nodes.Enqueue(neighbor,newCosts+heuristic);
             }
-            predecessors.Add(current);//????
         }
 
         static int HeurEstimate(Statetwo node, Statetwo goal)

@@ -43,8 +43,9 @@ public struct Statetwo
     { return PositionExists(newPosition) && _mGrid.GetWalkable(newPosition); }
     public IEnumerable<Connector> GetAdjacent()
     {
+        
         var cell = _mGrid.GetCell(playerPosition + Vector2Int.left);
-        if (cell.walkable) { yield return new Connector { Next = new Statetwo(), Costs = cell.cost }; }
+        if (cell.walkable) { yield return new Connector { Next = new Statetwo(), Costs = cell.cost }; } //pass on current pos + grid like up top
         cell = _mGrid.GetCell(playerPosition + Vector2Int.right);
         if (cell.walkable) { yield return new Connector { Next = new Statetwo(), Costs = cell.cost }; }
         cell = _mGrid.GetCell(playerPosition + Vector2Int.down);
