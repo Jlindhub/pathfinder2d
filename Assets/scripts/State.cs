@@ -43,15 +43,21 @@ public struct Statetwo
     { return PositionExists(newPosition) && _mGrid.GetWalkable(newPosition); }
     public IEnumerable<Connector> GetAdjacent()
     {
+        Vector2Int newPosition = playerPosition + Vector2Int.left;
+        var cell = _mGrid.GetCell(newPosition);
+        if (cell.walkable) { yield return new Connector { Next = new Statetwo{playerPosition = newPosition, _mGrid = _mGrid}, Costs = cell.cost }; } 
+
+        newPosition = playerPosition + Vector2Int.right;
+        cell = _mGrid.GetCell(newPosition);
+        if (cell.walkable) { yield return new Connector { Next = new Statetwo{playerPosition = newPosition, _mGrid = _mGrid}, Costs = cell.cost }; } 
         
-        var cell = _mGrid.GetCell(playerPosition + Vector2Int.left);
-        if (cell.walkable) { yield return new Connector { Next = new Statetwo(), Costs = cell.cost }; } //pass on current pos + grid like up top
-        cell = _mGrid.GetCell(playerPosition + Vector2Int.right);
-        if (cell.walkable) { yield return new Connector { Next = new Statetwo(), Costs = cell.cost }; }
-        cell = _mGrid.GetCell(playerPosition + Vector2Int.down);
-        if (cell.walkable) { yield return new Connector { Next = new Statetwo(), Costs = cell.cost }; }
-        cell = _mGrid.GetCell(playerPosition + Vector2Int.up);
-        if (cell.walkable) { yield return new Connector { Next = new Statetwo(), Costs = cell.cost }; }
+        newPosition = playerPosition + Vector2Int.up;
+        cell = _mGrid.GetCell(newPosition);
+        if (cell.walkable) { yield return new Connector { Next = new Statetwo{playerPosition = newPosition, _mGrid = _mGrid}, Costs = cell.cost }; }
+        
+        newPosition = playerPosition + Vector2Int.down;
+        cell = _mGrid.GetCell(newPosition);
+        if (cell.walkable) { yield return new Connector { Next = new Statetwo{playerPosition = newPosition, _mGrid = _mGrid}, Costs = cell.cost }; }
     }
 }
 public struct Connector
