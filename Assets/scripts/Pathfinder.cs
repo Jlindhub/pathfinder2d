@@ -130,6 +130,7 @@ public static class Pathfinder
         static List<Statetwo> BuildPath(Dictionary<Statetwo, Statetwo> predecessors, Statetwo neighbor, Statetwo start ) 
         {
             List<Statetwo> path = new List<Statetwo>();
+            path.Add(start);
             while (!neighbor.Equals(start)) { path.Add(neighbor); neighbor = predecessors[neighbor]; }
             path.Reverse();
             return path;

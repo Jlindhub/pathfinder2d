@@ -44,20 +44,33 @@ public struct Statetwo
     public IEnumerable<Connector> GetAdjacent()
     {
         Vector2Int newPosition = playerPosition + Vector2Int.left;
-        var cell = _mGrid.GetCell(newPosition);
-        if (cell.walkable) { yield return new Connector { Next = new Statetwo{playerPosition = newPosition, _mGrid = _mGrid}, Costs = cell.cost }; } 
+        Cell cell;
+        if (PositionIsWalkable(newPosition))
+        {
+            cell = _mGrid.GetCell(newPosition);
+            yield return new Connector { Next = new Statetwo{playerPosition = newPosition, _mGrid = _mGrid}, Costs = cell.cost };
+        } 
 
         newPosition = playerPosition + Vector2Int.right;
-        cell = _mGrid.GetCell(newPosition);
-        if (cell.walkable) { yield return new Connector { Next = new Statetwo{playerPosition = newPosition, _mGrid = _mGrid}, Costs = cell.cost }; } 
+        if (PositionIsWalkable(newPosition))
+        {
+            cell = _mGrid.GetCell(newPosition);
+            yield return new Connector { Next = new Statetwo{playerPosition = newPosition, _mGrid = _mGrid}, Costs = cell.cost };
+        } 
         
         newPosition = playerPosition + Vector2Int.up;
-        cell = _mGrid.GetCell(newPosition);
-        if (cell.walkable) { yield return new Connector { Next = new Statetwo{playerPosition = newPosition, _mGrid = _mGrid}, Costs = cell.cost }; }
+        if (PositionIsWalkable(newPosition))
+        {
+            cell = _mGrid.GetCell(newPosition);
+            yield return new Connector { Next = new Statetwo{playerPosition = newPosition, _mGrid = _mGrid}, Costs = cell.cost };
+        } 
         
         newPosition = playerPosition + Vector2Int.down;
-        cell = _mGrid.GetCell(newPosition);
-        if (cell.walkable) { yield return new Connector { Next = new Statetwo{playerPosition = newPosition, _mGrid = _mGrid}, Costs = cell.cost }; }
+        if (PositionIsWalkable(newPosition))
+        {
+            cell = _mGrid.GetCell(newPosition);
+            yield return new Connector { Next = new Statetwo{playerPosition = newPosition, _mGrid = _mGrid}, Costs = cell.cost };
+        } 
     }
 }
 public struct Connector
